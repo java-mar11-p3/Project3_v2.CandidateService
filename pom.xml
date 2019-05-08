@@ -3,9 +3,10 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.java</groupId>
-    <artifactId>Project3_v2</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.1.4.RELEASE</version>
+
   </parent>
   <artifactId>Project3_v2.CandidateService</artifactId>
   <packaging>war</packaging>
@@ -51,7 +52,27 @@
    		<artifactId>ojdbc7</artifactId>
    		<version>12.1.0.2</version>
    	</dependency>
-   	
+   	    <dependency>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-data-rest</artifactId>
+  </dependency>
+  <dependency>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-web</artifactId>
+  </dependency>
+
+
+  <dependency>
+  	<groupId>org.springframework.boot</groupId>
+  	<artifactId>spring-boot-starter-actuator</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>org.projectlombok</groupId>
+    <artifactId>lombok</artifactId>
+    <scope>provided</scope>
+</dependency>
+    
+
   </dependencies>
   
   <repositories>
