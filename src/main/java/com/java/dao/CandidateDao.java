@@ -1,5 +1,11 @@
 package com.java.dao;
 
-public class CandidateDao {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.java.dto.Candidate;
+
+@Repository
+public interface CandidateDao extends JpaRepository<Candidate, Integer>{
+	
 }

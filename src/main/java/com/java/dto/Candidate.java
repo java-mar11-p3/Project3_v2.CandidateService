@@ -23,7 +23,4 @@ public class Candidate {
 	String firstName;
 	String lastName;
 	String email;
-	String password;
-	String salt;
-	String username;
 }

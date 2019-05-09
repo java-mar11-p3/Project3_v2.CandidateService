@@ -1,89 +1,103 @@
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    		<groupId>org.springframework.boot</groupId>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.4.RELEASE</version>
 
-  </parent>
-  <artifactId>Project3_v2.CandidateService</artifactId>
-  <packaging>war</packaging>
-  <name>Project3_v2.CandidateService Maven Webapp</name>
-  <url>http://maven.apache.org</url>
-<dependencies>
-  
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    
-     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-       
-       <dependency>
-  	<groupId>org.springframework.boot</groupId>
-  	<artifactId>spring-boot-starter-data-jpa</artifactId>
-  </dependency>
-  
-  <dependency>
+	</parent>
+	<artifactId>Project3_v2.CandidateService</artifactId>
+	<packaging>war</packaging>
+	<name>Project3_v2.CandidateService Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpcore</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+			<version>2.1.1.RELEASE</version>
 		</dependency>
-	
-	<dependency>
+
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
-	</dependency>
-	
-	 <dependency>
-    <groupId>org.springframework.cloud</groupId>
-    <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
-	</dependency>
-		
-		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc7 -->	
-	<dependency>
-   		<groupId>com.oracle</groupId>
-   		<artifactId>ojdbc7</artifactId>
-   		<version>12.1.0.2</version>
-   	</dependency>
-   	    <dependency>
-  	<groupId>org.springframework.boot</groupId>
-  	<artifactId>spring-boot-starter-data-rest</artifactId>
-  </dependency>
-  <dependency>
-  	<groupId>org.springframework.boot</groupId>
-  	<artifactId>spring-boot-starter-web</artifactId>
-  </dependency>
+			<version>2.1.2.RELEASE</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+			<version>2.1.1.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc7 -->
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc7</artifactId>
+			<version>12.1.0.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-rest</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 
-  <dependency>
-  	<groupId>org.springframework.boot</groupId>
-  	<artifactId>spring-boot-starter-actuator</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>org.projectlombok</groupId>
-    <artifactId>lombok</artifactId>
-    <scope>provided</scope>
-</dependency>
-    
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<scope>provided</scope>
+		</dependency>
 
-  </dependencies>
-  
-  <repositories>
-  		<repository>
-  			<id>ojdbc</id>
-  			<url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
-  		</repository>
-  </repositories>
-  
-  
-  <build>
-    <finalName>Project3_v2.CandidateService</finalName>
-  </build>
+
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>ojdbc</id>
+			<url>http://nexus.saas.hand-china.com/content/repositories/rdc/</url>
+		</repository>
+	</repositories>
+
+
+	<build>
+		<finalName>Project3_v2.CandidateService</finalName>
+	</build>
 </project>
