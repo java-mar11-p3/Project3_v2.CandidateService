@@ -1,1 +1,1 @@
-insert into candidate values(1,'email@email.com', 'Johnny', 'Tran');
+select * from candidate;
