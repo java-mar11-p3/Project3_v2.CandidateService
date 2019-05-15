@@ -20,16 +20,23 @@ import com.java.service.CandidateService;
 public class CandidateController {
 	@Autowired CandidateService service;
 	
+	 
+	// GET Request: Returns a list of all candidates in the database
+	// Endpoint http://localhost:8890/candidates
 	@GetMapping
 	public List<Candidate> getAllCandidates() {
 		return service.getAllCandidates();
 	}
 	
+	// GET Request: Returns a candidate based on integer id passed in the uri
+	// Endpoint: http://localhost:8890/candidates/1
 	@GetMapping("/{id}")
 	public Candidate getCandidateById(@PathVariable int id) {
 		return service.getCandidateById(id);
 	}
 	
+	// POST Request: Inserts a candidate into the database
+	// Endpoint: http://localhost:8890/candidates
 	@PostMapping
 	public void addCandidate(@RequestBody Candidate candidate) {
 		service.addCandidate(candidate);
