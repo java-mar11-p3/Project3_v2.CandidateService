@@ -1,5 +1,7 @@
 package com.java.service;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -16,12 +18,17 @@ public class CandidateServiceImpl implements CandidateService {
 
 	@Override
 	public Page<Candidate> getAllCandidates(int page) {
-		return rep.findAll(PageRequest.of(page, 10));
+		return rep.findAll(PageRequest.of(page, 5));
 	}
 
 	@Override
 	public Candidate getCandidateById(int id) {
-		return rep.findById(id).get();
+		Optional<Candidate> candidate = rep.findById(id);
+		if(candidate.isPresent())
+			return candidate.get();
+		else {
+			return null;
+		}
 	}
 
 	@Override
