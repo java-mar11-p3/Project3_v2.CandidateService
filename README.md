@@ -7,7 +7,7 @@ This candidate microservice is able to insert candidates into a database, as wel
 Endpoints:
 ---------
 
-- GET: http://domain-name/candidates/page/{page}
-- GET: http://domain-name/candidates/{id}
-- POST: http://domain-name/candidates
+- GET: http://domain-name/candidates/page/{page} (Gets a list of candidates, five at a time)
+- GET: http://domain-name/candidates/{id} (Gets a candidate by their id)
+- POST: http://domain-name/candidates (Inserts a candidate into the database)
 
