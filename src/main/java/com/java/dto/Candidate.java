@@ -1,5 +1,6 @@
 package com.java.dto;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -22,5 +23,6 @@ public class Candidate {
 	int candidate_id;
 	String firstName;
 	String lastName;
+	@Column(unique = true)
 	String email;
 }
