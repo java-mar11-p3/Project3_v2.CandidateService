@@ -6,6 +6,11 @@ pipeline {
             sh 'mvn clean package'
          }
       }
+      stage('Test') {
+         steps {
+            sh 'mvn test'
+         }
+      }
       stage('Docker') {
          steps {
             sh 'sudo docker build -t sebenner/project_03:candidate-service .'
