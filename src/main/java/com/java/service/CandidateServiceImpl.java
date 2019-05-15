@@ -1,5 +1,6 @@
 package com.java.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CandidateServiceImpl implements CandidateService {
 	CandidateDao rep;
 
 	@Override
-	public Page<Candidate> getAllCandidates(int page) {
+	public Page<Candidate> getPaginatedCandidates(int page) {
 		return rep.findAll(PageRequest.of(page, 5));
 	}
 
@@ -36,4 +37,8 @@ public class CandidateServiceImpl implements CandidateService {
 		rep.save(candidate);
 	}
 
+	@Override
+	public List<Candidate> getAllCandidates() {
+		return rep.findAll();
+	}
 }

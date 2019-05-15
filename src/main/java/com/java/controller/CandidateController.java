@@ -1,5 +1,7 @@
 package com.java.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,25 +18,32 @@ import com.java.service.CandidateService;
 
 @RestController
 @RequestMapping("/candidates")
-@CrossOrigin(origins="*")
+@CrossOrigin(origins = "*")
 public class CandidateController {
-	@Autowired CandidateService service;
-	
-	 
+	@Autowired
+	CandidateService service;
+
 	// GET Request: Returns a list of all candidates in the database
 	// Endpoint http://localhost:8890/candidates
-	@GetMapping("/page/{page}")
-	public Page<Candidate> getAllCandidates(@PathVariable int page) {
-		return service.getAllCandidates(page);
+	@GetMapping
+	public List<Candidate> getAllCandidates() {
+		return service.getAllCandidates();
 	}
-	
+
+	// GET Request: Returns a list of all candidates in the database
+	// Endpoint http://localhost:8890/candidates/page/{page}
+	@GetMapping("/page/{page}")
+	public Page<Candidate> getPaginatedCandidates(@PathVariable int page) {
+		return service.getPaginatedCandidates(page);
+	}
+
 	// GET Request: Returns a candidate based on integer id passed in the uri
 	// Endpoint: http://localhost:8890/candidates/1
 	@GetMapping("/{id}")
 	public Candidate getCandidateById(@PathVariable int id) {
 		return service.getCandidateById(id);
 	}
-	
+
 	// POST Request: Inserts a candidate into the database
 	// Endpoint: http://localhost:8890/candidates
 	@PostMapping
