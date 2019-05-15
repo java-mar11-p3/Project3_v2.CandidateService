@@ -23,8 +23,8 @@ public class CandidateController {
 	 
 	// GET Request: Returns a list of all candidates in the database
 	// Endpoint http://localhost:8890/candidates
-	@GetMapping
-	public Page<Candidate> getAllCandidates(@RequestParam(defaultValue="0") int page) {
+	@GetMapping("/page/{page}")
+	public Page<Candidate> getAllCandidates(@PathVariable int page) {
 		return service.getAllCandidates(page);
 	}
 	
