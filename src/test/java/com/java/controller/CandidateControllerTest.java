@@ -3,12 +3,17 @@ package com.java.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
@@ -22,7 +27,7 @@ public class CandidateControllerTest {
 	@Autowired MockMvc mvc;
 	
 	@Test
-	public void getAllCandidatesTest() {
+	public void getAllCandidatesTest() throws Exception {
 		Candidate candidate = new Candidate();
 		candidate.setCandidate_id(1);
 		candidate.setEmail("emal@email.com");
@@ -39,7 +44,9 @@ public class CandidateControllerTest {
 		list.add(candidate);
 		list.add(candidate1);
 		
-		Mockito.when(service.getAllCandidates()).thenReturn(list);
+		when(service.getAllCandidates()).thenReturn(list);
+		mvc.perform(get("/candidates").contentType(MediaType.APPLICATION_JSON))
+			.andExpect(status().isOk());
 	}
 	
 }
