@@ -6,7 +6,7 @@ pipeline {
             sh 'mvn clean compile'
          }
       }
-      stage('Test'){
+      stage('Test') {
          steps {
             sh 'mvn test'
          }
@@ -14,6 +14,15 @@ pipeline {
       stage('Package') {
          steps {
             sh 'mvn package'
+         }
+      }
+      stage('Docker') {
+         steps {
+            sh 'sudo docker build -t sebenner/project_03:candidate-service .'
+            sh 'sudo docker login -u sebenner -p password_123 docker.io'
+            sh 'sudo docker push sebenner/project_03:candidate-service'
+            sh 'sudo docker login -u sebenner -p password_123 docker.io'
+            sh 'sudo docker run -P sebenner/project_03:candidate-service'
          }
       }
       /*stage('Deploy') {

@@ -2,7 +2,7 @@
 
 Description
 -----------
-This candidate microservice is able to insert candidates into a database, as well as retrieve all candidates or retrieve a single candidate by id.
+This candidate microservice is able to insert candidates into a database, as well as retrieve a paginated list of candidates or retrieve a single candidate by id.
 
 Endpoints:
 ---------
